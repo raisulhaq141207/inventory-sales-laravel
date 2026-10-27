@@ -247,11 +247,7 @@ php artisan test
 
 ![Hasil test](docs/screenshots/10-php-artisan-test.png)
 
-## 11. Screenshots
 
-Login & dashboard
-![Login](docs/screenshots/01-login.png)
-![Dashboard](docs/screenshots/02-dashboard.png)
 
 Master data
 ![Produk](docs/screenshots/03-products-index.png)
