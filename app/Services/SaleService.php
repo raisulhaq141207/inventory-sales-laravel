@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Sale;
 use App\Models\User;
@@ -86,6 +87,9 @@ class SaleService
             }
 
             $sale->update(['status' => 'cancelled']);
+
+            // Jika penjualan ini berasal dari pesanan online, pesanannya ikut dibatalkan.
+            Order::where('sale_id', $sale->id)->update(['status' => 'cancelled']);
         });
     }
 

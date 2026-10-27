@@ -29,6 +29,11 @@ class User extends Authenticatable
         return $this->role === 'admin';
     }
 
+    public function isCustomer(): bool
+    {
+        return $this->role === 'customer';
+    }
+
     public function sales(): HasMany
     {
         return $this->hasMany(Sale::class);
@@ -37,5 +42,10 @@ class User extends Authenticatable
     public function purchases(): HasMany
     {
         return $this->hasMany(Purchase::class);
+    }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
     }
 }

@@ -79,7 +79,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         // Produk yang sudah dipakai transaksi tidak boleh dihapus (riwayat harus utuh).
-        if ($product->saleItems()->exists() || $product->purchaseItems()->exists()) {
+        if ($product->saleItems()->exists() || $product->purchaseItems()->exists() || $product->orderItems()->exists()) {
             return redirect()->route('products.index')
                 ->with('error', 'Produk sudah dipakai dalam transaksi dan tidak dapat dihapus.');
         }

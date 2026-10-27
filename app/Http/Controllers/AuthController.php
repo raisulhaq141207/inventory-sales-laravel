@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,7 +28,36 @@ class AuthController extends Controller
 
         $request->session()->regenerate(); // cegah session fixation
 
-        return redirect()->intended(route('dashboard'));
+        $home = $request->user()->isCustomer() ? route('shop.index') : route('dashboard');
+
+        return redirect()->intended($home);
+    }
+
+    public function showRegister()
+    {
+        return view('auth.register');
+    }
+
+    // Registrasi mandiri: role SELALU 'customer', ditentukan server (bukan dari input form).
+    public function register(Request $request)
+    {
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:100'],
+            'email' => ['required', 'email', 'max:150', 'unique:users,email'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => $data['password'],
+            'role' => 'customer',
+        ]);
+
+        Auth::login($user);
+        $request->session()->regenerate();
+
+        return redirect()->route('shop.index')->with('success', 'Akun berhasil dibuat. Selamat datang!');
     }
 
     public function logout(Request $request)

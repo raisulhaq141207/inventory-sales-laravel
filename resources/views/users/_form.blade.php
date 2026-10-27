@@ -19,7 +19,7 @@
 <div class="mb-3">
     <label class="form-label">Role</label>
     <select name="role" class="form-select @error('role') is-invalid @enderror">
-        @foreach (['admin', 'staff'] as $r)
+        @foreach (['admin', 'staff', 'customer'] as $r)
             <option value="{{ $r }}" @selected(old('role', $user->role ?? 'staff') === $r)>{{ $r }}</option>
         @endforeach
     </select>

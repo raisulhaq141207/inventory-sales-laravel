@@ -18,7 +18,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrapFive();
 
-        // Gate 'admin': dipakai middleware "can:admin" pada route dan @can('admin') pada Blade.
+        // Dipakai middleware "can:..." pada route dan @can(...) pada Blade.
         Gate::define('admin', fn (User $user) => $user->isAdmin());
+        Gate::define('customer', fn (User $user) => $user->isCustomer());
+        Gate::define('staff-area', fn (User $user) => ! $user->isCustomer()); // admin & staff
     }
 }

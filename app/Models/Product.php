@@ -39,6 +39,11 @@ class Product extends Model
         return $this->hasMany(PurchaseItem::class);
     }
 
+    public function orderItems(): HasMany
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+
     // Pencarian SKU / nama (aman: memakai parameter binding).
     public function scopeSearch(Builder $query, ?string $term): Builder
     {

@@ -26,6 +26,9 @@
                     </div>
                     <button class="btn btn-primary w-100">Masuk</button>
                 </form>
+                <div class="text-center mt-3 small">
+                    Belum punya akun? <a href="{{ route('register') }}">Daftar sebagai customer</a>
+                </div>
             </div>
         </div>
     </div>
