@@ -243,27 +243,9 @@ php artisan test
 | Search, filter, pagination | `test_search_filter_and_pagination`, `test_sales_filter_by_status_and_validation_of_dates` |
 | Dashboard dari database | `test_dashboard_numbers_come_from_database` |
 
-**Bukti hasil pengujian:**
-
-![Hasil test](docs/screenshots/10-php-artisan-test.png)
 
 
-
-Master data
-![Produk](docs/screenshots/03-products-index.png)
-![Validasi produk](docs/screenshots/04-product-validation-error.png)
-![Pemasok](docs/screenshots/05-suppliers.png)
-
-Transaksi
-![Pembelian](docs/screenshots/06-purchase-create.png)
-![Penjualan](docs/screenshots/07-sale-create.png)
-![Detail penjualan](docs/screenshots/08-sale-detail.png)
-![Stok tidak cukup](docs/screenshots/09-insufficient-stock.png)
-
-Akses
-![Staff 403](docs/screenshots/11-staff-forbidden-403.png)
-
-## 12. Security
+## 11. Security
 
 - CSRF token (`@csrf`) di semua form POST/PUT/DELETE.
 - Output di-escape oleh Blade (`{{ }}`).
@@ -272,7 +254,7 @@ Akses
 - Query memakai Eloquent / parameter binding (aman dari SQL injection).
 - Kredensial hanya di `.env` (tidak di-commit).
 
-## 13. Known Limitations
+## 12. Known Limitations
 
 - Tidak ada payment gateway, multi-gudang, multi-currency, akuntansi, atau API.
 - Transaksi yang sudah selesai tidak dapat diedit, hanya dibatalkan.
