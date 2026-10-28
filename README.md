@@ -267,7 +267,7 @@ Transaksi
 Akses
 ![Staff 403](docs/screenshots/11-staff-forbidden-403.png)
 
-## 11. Security
+## 12. Security
 
 - CSRF token (`@csrf`) di semua form POST/PUT/DELETE.
 - Output di-escape oleh Blade (`{{ }}`).
@@ -276,7 +276,7 @@ Akses
 - Query memakai Eloquent / parameter binding (aman dari SQL injection).
 - Kredensial hanya di `.env` (tidak di-commit).
 
-## 12. Known Limitations
+## 13. Known Limitations
 
 - Tidak ada payment gateway, multi-gudang, multi-currency, akuntansi, atau API.
 - Transaksi yang sudah selesai tidak dapat diedit, hanya dibatalkan.
