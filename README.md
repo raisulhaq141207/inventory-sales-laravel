@@ -225,7 +225,7 @@ Test memakai SQLite in-memory (butuh ekstensi `pdo_sqlite`), tidak menyentuh dat
 ```bash
 php artisan test
 ```
-
+            
 | Skenario | Test |
 |---|---|
 | Guest tidak bisa buka dashboard | `test_guest_cannot_open_dashboard` |
@@ -243,7 +243,29 @@ php artisan test
 | Search, filter, pagination | `test_search_filter_and_pagination`, `test_sales_filter_by_status_and_validation_of_dates` |
 | Dashboard dari database | `test_dashboard_numbers_come_from_database` |
 
+**Bukti hasil pengujian:**
 
+![Hasil test](docs/screenshots/10-php-artisan-test.png)
+
+## 11. Screenshots
+
+Login & dashboard
+![Login](docs/screenshots/01-login.png)
+![Dashboard](docs/screenshots/02-dashboard.png)
+
+Master data
+![Produk](docs/screenshots/03-products-index.png)
+![Validasi produk](docs/screenshots/04-product-validation-error.png)
+![Pemasok](docs/screenshots/05-suppliers.png)
+
+Transaksi
+![Pembelian](docs/screenshots/06-purchase-create.png)
+![Penjualan](docs/screenshots/07-sale-create.png)
+![Detail penjualan](docs/screenshots/08-sale-detail.png)
+![Stok tidak cukup](docs/screenshots/09-insufficient-stock.png)
+
+Akses
+![Staff 403](docs/screenshots/11-staff-forbidden-403.png)
 
 ## 11. Security
 
