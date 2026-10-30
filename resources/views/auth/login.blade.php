@@ -6,6 +6,10 @@
     <div class="col-md-5">
         <div class="card shadow-sm">
             <div class="card-body p-4">
+                <div class="text-center mb-3">
+                    <img src="{{ asset('images/logo.svg') }}" alt="Logo Inventory &amp; Sales" width="64" height="64">
+                    <div class="fw-semibold mt-2">Inventory &amp; Sales</div>
+                </div>
                 <h1 class="h4 mb-3">Login</h1>
                 <form action="{{ route('login.attempt') }}" method="POST">
                     @csrf

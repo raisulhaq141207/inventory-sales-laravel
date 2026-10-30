@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Inventory') - Inventory & Sales</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('images/logo.svg') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 @auth
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
-        <a class="navbar-brand" href="{{ auth()->user()->isCustomer() ? route('shop.index') : route('dashboard') }}">Inventory &amp; Sales</a>
+        <a class="navbar-brand d-flex align-items-center gap-2" href="{{ auth()->user()->isCustomer() ? route('shop.index') : route('dashboard') }}">
+            <img src="{{ asset('images/logo.svg') }}" alt="Logo" width="32" height="32">
+            <span>Inventory &amp; Sales</span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
             <span class="navbar-toggler-icon"></span>
         </button>

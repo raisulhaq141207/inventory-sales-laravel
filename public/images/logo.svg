@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Inventory &amp; Sales">
+  <rect width="64" height="64" rx="14" fill="#0d6efd"/>
+  <!-- sisi atas -->
+  <path d="M32 12 L50 21 L32 30 L14 21 Z" fill="#ffffff"/>
+  <!-- sisi kiri -->
+  <path d="M14 21 L32 30 V50 L14 41 Z" fill="#cfe2ff"/>
+  <!-- sisi kanan -->
+  <path d="M50 21 L32 30 V50 L50 41 Z" fill="#9ec5fe"/>
+  <!-- garis tutup kardus -->
+  <path d="M23 16.5 L41 25.5" stroke="#0d6efd" stroke-width="2" stroke-linecap="round"/>
+</svg>
